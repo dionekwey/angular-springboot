@@ -1,0 +1,15 @@
+<form [formGroup]="productForm" (submit)="save()" *ngIf="productForm">
+    <div>
+        <label>Nome</label>
+        <input formControlName="name" type="text" />
+    </div>
+    <div>
+        <label>Descrição</label>
+        <input formControlName="description" type="text" />
+    </div>
+    <div>
+        <label>Valor</label>
+        <input formControlName="value" type="number" />
+    </div>
+    <button type="submit">Salvar</button>
+</form>

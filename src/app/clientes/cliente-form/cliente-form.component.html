@@ -1,0 +1,77 @@
+<form class="was-validated form-row" #cadastro="ngForm" (ngSubmit)="salvar()">
+  <div class="col-md-2 mb-3">
+    <label for="codigo">Código</label>
+    <input type="text" ng-model="cliente.codigo" class="form-control" disabled id="codigo">
+  </div>
+
+  <div class="col-md-4 mb-3">
+    <label for="nome">Nome</label>
+    <input type="text" [(ngModel)]="cliente.nome" class="form-control is-valid" #nome="ngModel" name="nome" minlength="5" required>
+    <div [hidden]="nome.valid" class="invalid-feedback">
+      Digite o nome.
+    </div>
+  </div>
+
+  <div class="col-md-4 mb-3">
+    <label for="cargo">Cargo</label>
+    <input type="text" [(ngModel)]="cliente.cargo" class="form-control is-valid" #cargo="ngModel" name="cargo" required>
+    <div [hidden]="cargo.valid" class="invalid-feedback">
+      Digite o cargo.
+    </div>
+  </div>
+
+  <div class="col-md-5 mb-3">
+    <label for="endereco">Endereço</label>
+    <input type="text" [(ngModel)]="cliente.endereco" class="form-control is-valid" #endereco="ngModel" name="endereco" required>
+    <div [hidden]="endereco.valid" class="invalid-feedback">
+      Digite o endereço.
+    </div>
+  </div>
+
+  <div class="col-md-3 mb-3">
+    <label for="cidade">Cidade</label>
+    <input type="text" [(ngModel)]="cliente.cidade" class="form-control is-valid" #cidade="ngModel" name="cidade" required>
+    <div [hidden]="cidade.valid" class="invalid-feedback">
+      Digite a cidade.
+    </div>
+  </div>
+
+  <div class="col-md-2 mb-2">
+    <label for="cep">CEP</label>
+    <input type="text" [(ngModel)]="cliente.cep" class="form-control is-valid" #cep="ngModel" name="cep" required>
+    <div [hidden]="cep.valid" class="invalid-feedback">
+      Digite o CEP.
+    </div>
+  </div>
+
+  <div class="col-md-3 mb-3">
+    <label for="pais">País</label>
+    <input type="text" [(ngModel)]="cliente.pais" class="form-control is-valid" #pais="ngModel" name="pais" required>
+    <div [hidden]="pais.valid" class="invalid-feedback">
+      Digite o país.
+    </div>
+  </div>
+
+  <div class="col-md-2 mb-2">
+    <label for="telefone">Telefone</label>
+    <input type="text" [(ngModel)]="cliente.telefone" class="form-control is-valid" #telefone="ngModel" name="telefone" required>
+    <div [hidden]="telefone.valid" class="invalid-feedback">
+      Digite o telefone.
+    </div>
+  </div>
+
+  <div class="col-md-2 mb-2">
+    <label for="fax">Fax</label>
+    <input type="text" [(ngModel)]="cliente.fax" class="form-control is-valid" #fax="ngModel" name="fax" required>
+    <div [hidden]="fax.valid" class="invalid-feedback">
+      Digite o FAX.
+    </div>
+  </div>
+
+  <div class="container">
+    <button type="submit" class="btn btn-success" [disabled]="cadastro.form.invalid">Salvar</button>
+    <button type="button" class="btn btn-danger" [hidden]="isNew" (click)="excluir()">Excluir</button>
+    <button type="button" class="btn btn-warning" (click)="cancelar()">Pesquisar</button>
+  </div>
+
+</form>

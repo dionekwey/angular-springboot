@@ -1,0 +1,22 @@
+<table *ngIf="products">
+    <thead>
+        <th>ID</th>
+        <th>Descricao</th>
+        <th>Nome</th>
+        <th>Preco</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{ product.id }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td>
+                <button [routerLink]="[product.id]">Editar</button>
+                <button (click)="delete(product)">Excluir</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button [routerLink]="['new']">Novo</button>
